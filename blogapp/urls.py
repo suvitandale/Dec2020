@@ -1,14 +1,17 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from .views import PostListView,PostDetailView,PostCreateView,PostDeleteView,PostUpdateView,UserPostListView
 
+# app_name = 'blogapp'
 
 urlpatterns = [
-    path('', views.home,name='blog-home'),
-    path('about/', views.about, name='blog-abaut'),
-    path('Register/',views.register, name='user-register'),
-    path('Login', views.login, name='user-login'),
-    path('Logout/', auth_views.LogoutView.as_view(template_name='blogapp\logout.html'), name='user-logout'),
-    path('Profile/', views.profileview, name='user-profile'),
+    path('', PostListView.as_view(),name='blog-home'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('post/new/', PostCreateView.as_view(), name='post-create'),
+    path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
+    path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('post/<str:email>/', UserPostListView.as_view(), name='user-post'),
+
 
 ]

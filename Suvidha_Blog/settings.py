@@ -124,6 +124,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = 'photos'
 MEDIA_URL = '/photos/'
 
+AUTH_USER_MODEL = 'blogapp.User'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -131,3 +132,4 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'softwaredevloper92@gmail.com'
 EMAIL_HOST_PASSWORD = 'Python_1992'
+

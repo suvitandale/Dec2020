@@ -1,0 +1,23 @@
+{% extends 'blogapp/base.html'%}
+{% block content %}
+
+<div class="content-section">
+
+        <div class="form-group col-md-8">
+             <form method="post" enctype="multipart/form-data">
+                 <fieldset class="form-group">
+                         <legend class="border-bottom mb-8">Delete Post</legend>
+                        <h3>Are You Sure You Want To Delete The Post - {{object.title}}</h3>
+                        {% csrf_token %}
+                 </fieldset>
+
+                 <div class="form-group">
+                 <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                 <button class="btn btn-outline-info" type="submit">Cancle</button>
+                 </div>
+            </form> &nbsp;&nbsp;
+        </div>
+
+</div>
+
+{% endblock content%}

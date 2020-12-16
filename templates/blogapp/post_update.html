@@ -1,0 +1,22 @@
+{% extends 'blogapp/base.html'%}
+{% block content %}
+
+<div class="content-section">
+    <legend class="border-bottom mb-6">Blog Post</legend>
+
+        <div class="form-group col-md-6">
+             <form method="post" enctype="multipart/form-data">
+                 <fieldset class="form-group">
+                        {{form.as_p}}
+                        {% csrf_token %}
+
+                 </fieldset>
+
+                 <div class="form-group">
+                 <button class="btn btn-outline-info" type="submit">Post</button>
+                 </div>
+            </form> &nbsp;&nbsp;
+        </div>
+
+</div>
+{% endblock content%}
